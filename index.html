@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome Ekono Armand!</title>
+  <title>Bienvenue Ekono Armand !</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
       padding: 20px;
     }
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       background: white;
       padding: 20px;
@@ -45,17 +45,17 @@
 </head>
 <body>
   <div class="container">
-    <h1>📘 Welcome Ekono Armand!</h1>
-    <p>Hey there 👋,</p>
-    <p>Here's the <b>next</b> exercise to help you practice HTML, CSS and JavaScript.</p>
+    <h1>📘 Bienvenue Ekono Armand !</h1>
+    <p>Salut 👋,</p>
+    <p>Voici la <b>prochaine</b> série d’exercices pour pratiquer HTML, CSS et JavaScript.</p>
     <hr>
-    <h2>Exercises - Live Demo</h2>
+    <h2>Liste des exercices - Démonstrations</h2>
     <table>
       <thead>
         <tr>
           <th>#</th>
-          <th>Project Name</th>
-          <th>Live Demo</th>
+          <th>Nom du projet</th>
+          <th>Démo en direct</th>
         </tr>
       </thead>
       <tbody id="projectsTable"></tbody>
@@ -64,68 +64,68 @@
 
   <script>
     const projects = [
-      "Expanding Cards",
-      "Progress Steps",
-      "Rotating Navigation Animation",
-      "Hidden Search Widget",
-      "Blurry Loading",
-      "Scroll Animation",
-      "Split Landing Page",
-      "Form Wave",
-      "Sound Board",
-      "Dad Jokes",
-      "Event Keycodes",
-      "Faq Collapse",
-      "Random Choice Picker",
-      "Animated Navigation",
-      "Incrementing Counter",
-      "Drink Water",
-      "Movie App",
-      "Background Slider",
-      "Theme Clock",
-      "Button Ripple Effect",
-      "Drag N Drop",
-      "Drawing App",
-      "Kinetic Loader",
-      "Content Placeholder",
-      "Sticky Navbar",
-      "Double Vertical Slider",
-      "Toast Notification",
-      "Github Profiles",
-      "Double Click Heart",
-      "Auto Text Effect",
-      "Password Generator",
-      "Good Cheap Fast",
-      "Notes App",
-      "Animated Countdown",
-      "Image Carousel",
-      "Hoverboard",
-      "Pokedex",
-      "Mobile Tab Navigation",
-      "Password Strength Background",
-      "3d Background Boxes",
-      "Verify Account Ui",
-      "Live User Filter",
-      "Feedback Ui Design",
-      "Custom Range Slider",
-      "Netflix Mobile Navigation",
-      "Quiz App",
-      "Testimonial Box Switcher",
-      "Random Image Feed",
-      "Todo List",
-      "Insect Catch Game",
-      "Simple Timer"
+      { fr: "Cartes Élargissantes", en: "Expanding Cards" },
+      { fr: "Étapes de Progression", en: "Progress Steps" },
+      { fr: "Navigation Rotative", en: "Rotating Navigation Animation" },
+      { fr: "Champ de Recherche Caché", en: "Hidden Search Widget" },
+      { fr: "Chargement Flou", en: "Blurry Loading" },
+      { fr: "Animation au Défilement", en: "Scroll Animation" },
+      { fr: "Page Partagée", en: "Split Landing Page" },
+      { fr: "Effet de Vague sur Formulaire", en: "Form Wave" },
+      { fr: "Tableau Sonore", en: "Sound Board" },
+      { fr: "Blagues de Papa", en: "Dad Jokes" },
+      { fr: "Codes des Touches", en: "Event Keycodes" },
+      { fr: "FAQ Déroulante", en: "Faq Collapse" },
+      { fr: "Sélecteur Aléatoire", en: "Random Choice Picker" },
+      { fr: "Navigation Animée", en: "Animated Navigation" },
+      { fr: "Compteur Incrémental", en: "Incrementing Counter" },
+      { fr: "Suivi Hydratation", en: "Drink Water" },
+      { fr: "Application de Films", en: "Movie App" },
+      { fr: "Slider Arrière-plan", en: "Background Slider" },
+      { fr: "Horloge Thème", en: "Theme Clock" },
+      { fr: "Effet d’Onde sur Bouton", en: "Button Ripple Effect" },
+      { fr: "Glisser-Déposer", en: "Drag N Drop" },
+      { fr: "Application de Dessin", en: "Drawing App" },
+      { fr: "Chargeur Cinétique", en: "Kinetic Loader" },
+      { fr: "Placeholder de Contenu", en: "Content Placeholder" },
+      { fr: "Barre de Navigation Fixe", en: "Sticky Navbar" },
+      { fr: "Double Slider Vertical", en: "Double Vertical Slider" },
+      { fr: "Notification Toast", en: "Toast Notification" },
+      { fr: "Profils Github", en: "Github Profiles" },
+      { fr: "Double Clic Cœur", en: "Double Click Heart" },
+      { fr: "Texte Automatique", en: "Auto Text Effect" },
+      { fr: "Générateur de Mot de Passe", en: "Password Generator" },
+      { fr: "Bon, Pas Cher, Rapide", en: "Good Cheap Fast" },
+      { fr: "Application de Notes", en: "Notes App" },
+      { fr: "Compte à Rebours Animé", en: "Animated Countdown" },
+      { fr: "Carrousel d’Images", en: "Image Carousel" },
+      { fr: "Planche Interactive", en: "Hoverboard" },
+      { fr: "Pokedex", en: "Pokedex" },
+      { fr: "Navigation Onglets Mobile", en: "Mobile Tab Navigation" },
+      { fr: "Fond Force Mot de Passe", en: "Password Strength Background" },
+      { fr: "Boîtes 3D", en: "3d Background Boxes" },
+      { fr: "Vérification de Compte", en: "Verify Account Ui" },
+      { fr: "Filtrage Utilisateurs en Direct", en: "Live User Filter" },
+      { fr: "Interface Avis Utilisateur", en: "Feedback Ui Design" },
+      { fr: "Curseur Personnalisé", en: "Custom Range Slider" },
+      { fr: "Menu Mobile Netflix", en: "Netflix Mobile Navigation" },
+      { fr: "Application Quiz", en: "Quiz App" },
+      { fr: "Boîte Témoignage Animée", en: "Testimonial Box Switcher" },
+      { fr: "Flux d’Images Aléatoires", en: "Random Image Feed" },
+      { fr: "Liste de Tâches", en: "Todo List" },
+      { fr: "Jeu Attrape-Insectes", en: "Insect Catch Game" },
+      { fr: "Minuteur Simple", en: "Simple Timer" }
     ];
 
     const table = document.getElementById("projectsTable");
 
-    projects.forEach((name, index) => {
-      const folderName = String(index + 1).padStart(2, '0') + "-" + name.replace(/\s+/g, '-');
+    projects.forEach((proj, index) => {
+      const folderName = proj.en.toLowerCase().replace(/\s+/g, '-');
       const tr = document.createElement("tr");
       tr.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${name}</td>
-        <td><a href="./${folderName}/index.html" target="_blank">Live Demo</a></td>
+        <td>${String(index + 1).padStart(2, '0')}</td>
+        <td>${proj.fr}</td>
+        <td><a href="./${folderName}/index.html" target="_blank">Voir la démo</a></td>
       `;
       table.appendChild(tr);
     });

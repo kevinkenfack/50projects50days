@@ -5,11 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bienvenue Ekono Armand !</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
       font-family: Arial, sans-serif;
       background: #f8f9fa;
-      padding: 20px;
+      padding: 15px;
+      line-height: 1.6;
     }
+    
     .container {
       max-width: 900px;
       margin: auto;
@@ -18,36 +26,128 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 { color: #007bff; }
+    
+    .warning {
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      border-left: 5px solid #ffc107;
+      color: #856404;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      font-size: 0.95rem;
+    }
+    
+    .warning-icon {
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    h1 { 
+      color: #007bff; 
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+    
+    p {
+      margin-bottom: 15px;
+    }
+    
+    hr {
+      margin: 20px 0;
+      border: 0;
+      border-top: 1px solid #eee;
+    }
+    
+    h2 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+    }
+    
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
     }
+    
     th, td {
       border: 1px solid #ddd;
-      padding: 10px;
+      padding: 12px;
       text-align: left;
     }
+    
     th {
       background: #007bff;
       color: white;
     }
+    
     a {
       color: #007bff;
       text-decoration: none;
       font-weight: bold;
     }
+    
     a:hover {
       text-decoration: underline;
+    }
+    
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px;
+        font-size: 14px;
+      }
+      
+      .container {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      h2 {
+        font-size: 1.2rem;
+      }
+      
+      table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      th, td {
+        padding: 8px;
+      }
+      
+      .warning {
+        padding: 12px;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      th, td {
+        padding: 6px;
+        font-size: 0.9rem;
+      }
+      
+      .container {
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    
     <h1>📘 Bienvenue Ekono Armand !</h1>
     <p>Salut 👋,</p>
-    <p>Voici la <b>prochaine</b> série d’exercices pour pratiquer HTML, CSS et JavaScript.</p>
+    <p>Voici une série d'exercices pour pratiquer HTML, CSS et JavaScript.</p>
+	<div class="warning">
+      <span class="warning-icon">⚠️</span> Note importante : Attend mes instructions spécifiques pour travailler sur chaque exercice. Nous procéderons de manière méthodique.
+    </div>
     <hr>
     <h2>Liste des exercices - Démonstrations</h2>
     <table>
@@ -83,7 +183,7 @@
       { fr: "Application de Films", en: "Movie App" },
       { fr: "Slider Arrière-plan", en: "Background Slider" },
       { fr: "Horloge Thème", en: "Theme Clock" },
-      { fr: "Effet d’Onde sur Bouton", en: "Button Ripple Effect" },
+      { fr: "Effet d'Onde sur Bouton", en: "Button Ripple Effect" },
       { fr: "Glisser-Déposer", en: "Drag N Drop" },
       { fr: "Application de Dessin", en: "Drawing App" },
       { fr: "Chargeur Cinétique", en: "Kinetic Loader" },
@@ -98,7 +198,7 @@
       { fr: "Bon, Pas Cher, Rapide", en: "Good Cheap Fast" },
       { fr: "Application de Notes", en: "Notes App" },
       { fr: "Compte à Rebours Animé", en: "Animated Countdown" },
-      { fr: "Carrousel d’Images", en: "Image Carousel" },
+      { fr: "Carrousel d'Images", en: "Image Carousel" },
       { fr: "Planche Interactive", en: "Hoverboard" },
       { fr: "Pokedex", en: "Pokedex" },
       { fr: "Navigation Onglets Mobile", en: "Mobile Tab Navigation" },
@@ -111,7 +211,7 @@
       { fr: "Menu Mobile Netflix", en: "Netflix Mobile Navigation" },
       { fr: "Application Quiz", en: "Quiz App" },
       { fr: "Boîte Témoignage Animée", en: "Testimonial Box Switcher" },
-      { fr: "Flux d’Images Aléatoires", en: "Random Image Feed" },
+      { fr: "Flux d'Images Aléatoires", en: "Random Image Feed" },
       { fr: "Liste de Tâches", en: "Todo List" },
       { fr: "Jeu Attrape-Insectes", en: "Insect Catch Game" },
       { fr: "Minuteur Simple", en: "Simple Timer" }

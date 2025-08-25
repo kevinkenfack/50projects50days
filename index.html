@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Ekono Armand!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 { color: #007bff; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #007bff;
+      color: white;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📘 Welcome Ekono Armand!</h1>
+    <p>Hey there 👋,</p>
+    <p>Here's the <b>next</b> exercise to help you practice HTML, CSS and JavaScript.</p>
+    <hr>
+    <h2>Exercises - Live Demo</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Project Name</th>
+          <th>Live Demo</th>
+        </tr>
+      </thead>
+      <tbody id="projectsTable"></tbody>
+    </table>
+  </div>
+
+  <script>
+    const projects = [
+      "Expanding Cards",
+      "Progress Steps",
+      "Rotating Navigation Animation",
+      "Hidden Search Widget",
+      "Blurry Loading",
+      "Scroll Animation",
+      "Split Landing Page",
+      "Form Wave",
+      "Sound Board",
+      "Dad Jokes",
+      "Event Keycodes",
+      "Faq Collapse",
+      "Random Choice Picker",
+      "Animated Navigation",
+      "Incrementing Counter",
+      "Drink Water",
+      "Movie App",
+      "Background Slider",
+      "Theme Clock",
+      "Button Ripple Effect",
+      "Drag N Drop",
+      "Drawing App",
+      "Kinetic Loader",
+      "Content Placeholder",
+      "Sticky Navbar",
+      "Double Vertical Slider",
+      "Toast Notification",
+      "Github Profiles",
+      "Double Click Heart",
+      "Auto Text Effect",
+      "Password Generator",
+      "Good Cheap Fast",
+      "Notes App",
+      "Animated Countdown",
+      "Image Carousel",
+      "Hoverboard",
+      "Pokedex",
+      "Mobile Tab Navigation",
+      "Password Strength Background",
+      "3d Background Boxes",
+      "Verify Account Ui",
+      "Live User Filter",
+      "Feedback Ui Design",
+      "Custom Range Slider",
+      "Netflix Mobile Navigation",
+      "Quiz App",
+      "Testimonial Box Switcher",
+      "Random Image Feed",
+      "Todo List",
+      "Insect Catch Game",
+      "Simple Timer"
+    ];
+
+    const table = document.getElementById("projectsTable");
+
+    projects.forEach((name, index) => {
+      const folderName = String(index + 1).padStart(2, '0') + "-" + name.replace(/\s+/g, '-');
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${name}</td>
+        <td><a href="./${folderName}/index.html" target="_blank">Live Demo</a></td>
+      `;
+      table.appendChild(tr);
+    });
+  </script>
+</body>
+</html>

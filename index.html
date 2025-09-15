@@ -96,6 +96,7 @@
       margin-bottom: 20px;
       font-size: 1.4rem;
       color: #333;
+      text-align: center;
     }
     
     /* Styles de la barre de recherche améliorée */
@@ -105,6 +106,7 @@
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
+      display: none;
     }
     
     .search-input {
@@ -143,6 +145,7 @@
       margin-top: 10px;
       color: #6c757d;
       font-size: 0.9rem;
+      display: none;
     }
     
     .search-tips .tip {
@@ -308,9 +311,9 @@
     
     <hr>
     
-    <h2>Liste des exercices - Démonstrations</h2>
+    <h2>Liste des exercices avec Aperçu</h2>
     
-    <!-- Barre de recherche 
+    <!-- Barre de recherche -->
     <div class="search-container">
       <input 
         type="text" 
@@ -320,7 +323,6 @@
       >
       <span class="search-icon">🔍</span>
     </div>
-	  
     
     <div class="search-tips">
       Exemples: <span class="tip">carousel</span> <span class="tip">50</span> <span class="tip">animation</span> <span class="tip">quiz</span>
@@ -338,7 +340,6 @@
       </thead>
       <tbody id="projectsTable"></tbody>
     </table>
-	  -->
     
     <div class="no-results" id="noResults">
       <h3>🔍 Aucun exercice trouvé</h3>

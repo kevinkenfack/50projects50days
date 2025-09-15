@@ -19,22 +19,465 @@
     }
     
     .container {
-      max-width: 900px;
+      width: 100%;
+      max-width: none;
       margin: auto;
       background: white;
-      padding: 20px;
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     
     .warning {
-      background-color: #fff3cd;
+      background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
       border: 1px solid #ffeaa7;
       border-left: 5px solid #ffc107;
       color: #856404;
-      padding: 15px;
+      padding: 20px 25px;
+      margin-bottom: 25px;
+      border-radius: 10px;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .warning::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ffc107, #ff9800, #ffc107);
+      animation: shimmer 2s ease-in-out infinite;
+    }
+    
+    @keyframes shimmer {
+      0%, 100% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+    }
+    
+    .warning-icon {
+      display: inline-block;
+      margin-right: 12px;
+      font-weight: bold;
+      font-size: 1.3rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .warning-text {
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    
+    h1 { 
+      color: #007bff; 
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+    
+    p {
+      margin-bottom: 15px;
+    }
+    
+    hr {
+      margin: 25px 0;
+      border: 0;
+      border-top: 1px solid #eee;
+    }
+    
+    h2 {
       margin-bottom: 20px;
+      font-size: 1.4rem;
+      color: #333;
+    }
+    
+    /* Styles de la barre de recherche améliorée */
+    .search-container {
+      margin: 25px 0;
+      position: relative;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      border: 2px solid #007bff;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .search-input:focus {
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+      border-color: #0056b3;
+      transform: scale(1.02);
+    }
+    
+    .search-input::placeholder {
+      color: #6c757d;
+    }
+    
+    .search-icon {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #007bff;
+      font-size: 18px;
+      pointer-events: none;
+    }
+    
+    .search-tips {
+      text-align: center;
+      margin-top: 10px;
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+    
+    .search-tips .tip {
+      background: #e9ecef;
+      padding: 3px 8px;
+      border-radius: 10px;
+      margin: 0 3px;
+      font-family: monospace;
+      font-weight: bold;
+    }
+    
+    .results-info {
+      margin: 15px 0;
+      color: #007bff;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1rem;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px 12px;
+      text-align: left;
+    }
+    
+    th {
+      background: #007bff;
+      color: white;
+      font-weight: 600;
+    }
+    
+    /* Animation pour les lignes filtrées */
+    .project-row {
+      transition: all 0.3s ease;
+    }
+    
+    .project-row.hidden {
+      display: none;
+    }
+    
+    .project-row:hover {
+      background-color: #f8f9fa;
+    }
+    
+    .project-number {
+      font-weight: bold;
+      color: #007bff;
+      font-size: 1.1rem;
+    }
+    
+    .project-name {
+      font-weight: 500;
+    }
+    
+    a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border: 1px solid #007bff;
       border-radius: 5px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    a:hover {
+      background: #007bff;
+      color: white;
+      transform: translateY(-1px);
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      color: #6c757d;
+      font-style: italic;
+      display: none;
+    }
+    
+    .no-results h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px;
+        font-size: 14px;
+      }
+      
+      .container {
+        padding: 20px;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      h2 {
+        font-size: 1.2rem;
+      }
+      
+      .search-input {
+        padding: 12px 45px 12px 15px;
+        font-size: 14px;
+      }
+      
+      .search-container {
+        max-width: none;
+      }
+      
+      table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      th, td {
+        padding: 10px 8px;
+      }
+      
+      .warning {
+        padding: 15px 20px;
+        font-size: 0.95rem;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      th, td {
+        padding: 8px 6px;
+        font-size: 0.9rem;
+      }
+      
+      .container {
+        padding: 15px;
+      }
+      
+      .search-input {
+        padding: 10px 40px 10px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <h1>📘 Bienvenue Ekono Armand !</h1>
+    <p>Salut 👋,</p>
+    <p>Voici une série d'exercices pour pratiquer HTML, CSS et JavaScript.</p>
+	<div class="warning">
+      <span class="warning-icon">⚠️</span> 
+      <span class="warning-text">
+        <strong>Note importante :</strong> Attend mes instructions spécifiques pour travailler sur chaque exercice. Nous allons procédé de manière méthodique pour assurer une progression efficace.
+      </span>
+    </div>
+    
+    <hr>
+    
+    <h2>Liste des exercices - Démonstrations</h2>
+    
+    <!-- Barre de recherche -->
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="Rechercher par nom ou numéro d'exercice..."
+      >
+      <span class="search-icon">🔍</span>
+    </div>
+    
+    <div class="search-tips">
+      Exemples: <span class="tip">carousel</span> <span class="tip">50</span> <span class="tip">animation</span> <span class="tip">quiz</span>
+    </div>
+    
+    <div class="results-info" id="resultsInfo"></div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom du projet</th>
+          <th>Démo en direct</th>
+        </tr>
+      </thead>
+      <tbody id="projectsTable"></tbody>
+    </table>
+    
+    <div class="no-results" id="noResults">
+      <h3>🔍 Aucun exercice trouvé</h3>
+      <p>Essayez avec d'autres mots-clés ou un autre numéro !</p>
+    </div>
+  </div>
+
+  <script>
+    const projects = [
+      { fr: "Cartes Élargissantes", en: "Expanding Cards" },
+      { fr: "Étapes de Progression", en: "Progress Steps" },
+      { fr: "Navigation Rotative", en: "Rotating Nav Animation" },
+      { fr: "Champ de Recherche Caché", en: "Hidden Search Widget" },
+      { fr: "Chargement Flou", en: "Blurry Loading" },
+      { fr: "Animation au Défilement", en: "Scroll Animation" },
+      { fr: "Page Partagée", en: "Split Landing Page" },
+      { fr: "Effet de Vague sur Formulaire", en: "Form Wave" },
+      { fr: "Tableau Sonore", en: "Sound Board" },
+      { fr: "Blagues de Papa", en: "Dad Jokes" },
+      { fr: "Codes des Touches", en: "Event Keycodes" },
+      { fr: "FAQ Déroulante", en: "Faq Collapse" },
+      { fr: "Sélecteur Aléatoire", en: "Random Choice Picker" },
+      { fr: "Navigation Animée", en: "Animated Navigation" },
+      { fr: "Compteur Incrémental", en: "Incrementing Counter" },
+      { fr: "Suivi Hydratation", en: "Drink Water" },
+      { fr: "Application de Films", en: "Movie App" },
+      { fr: "Slider Arrière-plan", en: "Background Slider" },
+      { fr: "Horloge Thème", en: "Theme Clock" },
+      { fr: "Effet d'Onde sur Bouton", en: "Button Ripple Effect" },
+      { fr: "Glisser-Déposer", en: "Drag N Drop" },
+      { fr: "Application de Dessin", en: "Drawing App" },
+      { fr: "Chargeur Cinétique", en: "Kinetic Loader" },
+      { fr: "Placeholder de Contenu", en: "Content Placeholder" },
+      { fr: "Barre de Navigation Fixe", en: "Sticky Navbar" },
+      { fr: "Double Slider Vertical", en: "Double Vertical Slider" },
+      { fr: "Notification Toast", en: "Toast Notification" },
+      { fr: "Profils Github", en: "Github Profiles" },
+      { fr: "Double Clic Cœur", en: "Double Click Heart" },
+      { fr: "Texte Automatique", en: "Auto Text Effect" },
+      { fr: "Générateur de Mot de Passe", en: "Password Generator" },
+      { fr: "Bon, Pas Cher, Rapide", en: "Good Cheap Fast" },
+      { fr: "Application de Notes", en: "Notes App" },
+      { fr: "Compte à Rebours Animé", en: "Animated Countdown" },
+      { fr: "Carrousel d'Images", en: "Image Carousel" },
+      { fr: "Planche Interactive", en: "Hoverboard" },
+      { fr: "Pokedex", en: "Pokedex" },
+      { fr: "Navigation Onglets Mobile", en: "Mobile Tab Navigation" },
+      { fr: "Fond Force Mot de Passe", en: "Password Strength Background" },
+      { fr: "Boîtes 3D", en: "3d Background Boxes" },
+      { fr: "Vérification de Compte", en: "Verify Account Ui" },
+      { fr: "Filtrage Utilisateurs en Direct", en: "Live User Filter" },
+      { fr: "Interface Avis Utilisateur", en: "Feedback Ui Design" },
+      { fr: "Curseur Personnalisé", en: "Custom Range Slider" },
+      { fr: "Menu Mobile Netflix", en: "Netflix Mobile Navigation" },
+      { fr: "Application Quiz", en: "Quiz App" },
+      { fr: "Boîte Témoignage Animée", en: "Testimonial Box Switcher" },
+      { fr: "Flux d'Images Aléatoires", en: "Random Image Feed" },
+      { fr: "Liste de Tâches", en: "Todo List" },
+      { fr: "Jeu Attrape-Insectes", en: "Insect Catch Game" },
+      { fr: "Minuteur Simple", en: "Simple Timer" }
+    ];
+
+    const table = document.getElementById("projectsTable");
+    const searchInput = document.getElementById("searchInput");
+    const resultsInfo = document.getElementById("resultsInfo");
+    const noResults = document.getElementById("noResults");
+
+    // Générer le tableau initial
+    function generateTable() {
+      table.innerHTML = '';
+      projects.forEach((proj, index) => {
+        const projectNumber = index + 1;
+        const folderName = proj.en.toLowerCase().replace(/\s+/g, '-');
+        const tr = document.createElement("tr");
+        tr.className = 'project-row';
+        tr.setAttribute('data-number', projectNumber);
+        tr.setAttribute('data-name', proj.fr.toLowerCase());
+        
+        tr.innerHTML = `
+          <td class="project-number">${String(projectNumber).padStart(2, '0')}</td>
+          <td class="project-name">${proj.fr}</td>
+          <td><a href="./${folderName}/index.html" target="_blank">la démo</a></td>
+        `;
+        table.appendChild(tr);
+      });
+      updateResultsInfo(projects.length);
+    }
+
+    // Fonction de recherche avancée (nom ET numéro)
+    function filterProjects() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      const rows = table.getElementsByClassName('project-row');
+      let visibleCount = 0;
+
+      Array.from(rows).forEach(row => {
+        const projectNumber = row.getAttribute('data-number');
+        const projectName = row.getAttribute('data-name');
+        
+        // Recherche par numéro exact ou par nom (contient)
+        const matchesNumber = projectNumber === searchTerm;
+        const matchesName = projectName.includes(searchTerm);
+        
+        if (matchesNumber || matchesName || searchTerm === '') {
+          row.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+
+      // Afficher/masquer le message "aucun résultat"
+      if (visibleCount === 0 && searchTerm !== '') {
+        noResults.style.display = 'block';
+        table.style.display = 'none';
+        resultsInfo.style.display = 'none';
+      } else {
+        noResults.style.display = 'none';
+        table.style.display = 'table';
+        resultsInfo.style.display = 'block';
+      }
+
+      updateResultsInfo(visibleCount, searchTerm);
+    }
+
+    // Mettre à jour l'info des résultats
+    function updateResultsInfo(count, searchTerm = '') {
+      if (searchTerm) {
+        resultsInfo.textContent = `${count} exercice${count !== 1 ? 's' : ''} trouvé${count !== 1 ? 's' : ''} pour "${searchTerm}"`;
+      } else {
+        resultsInfo.textContent = `${count} exercices au total`;
+      }
+    }
+
+    // Événement de recherche en temps réel
+    searchInput.addEventListener('input', filterProjects);
+
+    // Générer le tableau au chargement
+    generateTable();
+  </script>
+</body>
+</html>      border-radius: 5px;
       font-size: 0.95rem;
     }
     

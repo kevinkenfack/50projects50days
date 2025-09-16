@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenue Ekono Armand !</title>
+  <title>50 Projets HTML CSS JavaScript En 50 Jours !</title>
   <style>
     * {
       box-sizing: border-box;
@@ -34,13 +34,15 @@
       border-left: 5px solid #ffc107;
       color: #856404;
       padding: 20px 25px;
-      margin-bottom: 25px;
+      margin: 25px auto;   /* ← auto à gauche/droite pour centrer */
       border-radius: 10px;
+      max-width: 800px;    /* largeur max */
       font-size: 1rem;
       box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
       position: relative;
       overflow: hidden;
     }
+
     
     .warning::before {
       content: '';
@@ -80,10 +82,12 @@
       color: #007bff; 
       margin-bottom: 15px;
       font-size: 1.8rem;
+      text-align: center;
     }
     
     p {
       margin-bottom: 15px;
+      text-align: center;
     }
     
     hr {
@@ -99,14 +103,14 @@
       text-align: center;
     }
     
-    /* Styles de la barre de recherche améliorée */
+    /* Styles de la barre de recherche */
     .search-container {
       margin: 25px 0;
       position: relative;
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
-      display: none;
+      display: block;
     }
     
     .search-input {
@@ -145,7 +149,7 @@
       margin-top: 10px;
       color: #6c757d;
       font-size: 0.9rem;
-      display: none;
+      display: block;
     }
     
     .search-tips .tip {
@@ -164,68 +168,146 @@
       text-align: center;
       font-size: 1rem;
     }
+
+    /* Lien GitHub */
+    .github-link {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .github-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #333;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .github-btn:hover {
+      background: #24292e;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .github-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
     
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    /* Grille de cartes */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
       margin-top: 20px;
     }
     
-    th, td {
-      border: 1px solid #ddd;
-      padding: 15px 12px;
-      text-align: left;
-    }
-    
-    th {
-      background: #007bff;
-      color: white;
-      font-weight: 600;
-    }
-    
-    /* Animation pour les lignes filtrées */
-    .project-row {
+    .project-card {
+      background: white;
+      border: 1px solid #e9ecef;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
     
-    .project-row.hidden {
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #007bff, #007bff);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,123,255,0.15);
+    }
+    
+    .project-card:hover::before {
+      opacity: 1;
+    }
+    
+    .project-card.hidden {
       display: none;
     }
     
-    .project-row:hover {
-      background-color: #f8f9fa;
-    }
-    
     .project-number {
+      font-size: 2rem;
       font-weight: bold;
       color: #007bff;
-      font-size: 1.1rem;
+      margin-bottom: 10px;
+      display: block;
     }
     
     .project-name {
-      font-weight: 500;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+      line-height: 1.3;
     }
     
-    a {
-      color: #007bff;
+    .project-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .demo-link, .github-source-link {
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
-      padding: 8px 16px;
-      border: 1px solid #007bff;
-      border-radius: 5px;
+      font-weight: 600;
+      text-align: center;
       transition: all 0.3s ease;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
     }
     
-    a:hover {
+    .demo-link {
       background: #007bff;
       color: white;
+      border: 2px solid #007bff;
+    }
+    
+    .demo-link:hover {
+      background: #0056b3;
+      border-color: #0056b3;
       transform: translateY(-1px);
+    }
+    
+    .github-source-link {
+      background: transparent;
+      color: #333;
+      border: 2px solid #e9ecef;
+    }
+    
+    .github-source-link:hover {
+      background: #f8f9fa;
+      border-color: #333;
+      color: #333;
     }
     
     .no-results {
       text-align: center;
-      padding: 40px;
+      padding: 60px 40px;
       color: #6c757d;
       font-style: italic;
       display: none;
@@ -234,9 +316,163 @@
     .no-results h3 {
       margin-bottom: 10px;
       color: #333;
+      font-size: 1.5rem;
+    }
+
+    /* Modal Dialog Styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .danger-dialog {
+      background: white;
+      border-radius: 12px;
+      padding: 0;
+      max-width: 500px;
+      width: 90%;
+      max-height: 90vh;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(220, 53, 69, 0.3);
+      border: 3px solid #dc3545;
+      animation: slideIn 0.3s ease;
+      position: relative;
+    }
+
+    @keyframes slideIn {
+      from { 
+        transform: scale(0.8) translateY(-50px);
+        opacity: 0;
+      }
+      to { 
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .dialog-header {
+      background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+      color: white;
+      padding: 20px 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dialog-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ff6b6b, #dc3545, #ff6b6b);
+      animation: shimmerDanger 2s ease-in-out infinite;
+    }
+
+    @keyframes shimmerDanger {
+      0%, 100% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+    }
+
+    .dialog-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .danger-icon {
+      font-size: 1.8rem;
+      animation: shake 0.5s ease-in-out infinite;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .dialog-body {
+      padding: 30px 25px;
+      text-align: center;
+    }
+
+    .danger-message {
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .danger-message strong {
+      color: #dc3545;
+      font-weight: bold;
+    }
+
+    .dialog-actions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      padding: 0 25px 25px;
+    }
+
+    .btn-close {
+      background: #6c757d;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-close:hover {
+      background: #5a6268;
+      transform: translateY(-1px);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(90deg);
     }
     
-    /* Responsive styles */
+    /* Responsive */
     @media screen and (max-width: 768px) {
       body {
         padding: 10px;
@@ -264,34 +500,71 @@
         max-width: none;
       }
       
-      table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
       }
       
-      th, td {
-        padding: 10px 8px;
+      .project-card {
+        padding: 15px;
+      }
+      
+      .project-actions {
+        flex-direction: column;
+        gap: 8px;
       }
       
       .warning {
         padding: 15px 20px;
         font-size: 0.95rem;
       }
+
+      .danger-dialog {
+        width: 95%;
+        margin: 10px;
+      }
+
+      .dialog-header {
+        padding: 15px 20px;
+      }
+
+      .dialog-title {
+        font-size: 1.2rem;
+      }
+
+      .dialog-body {
+        padding: 20px 15px;
+      }
     }
     
     @media screen and (max-width: 480px) {
-      th, td {
-        padding: 8px 6px;
-        font-size: 0.9rem;
-      }
-      
       .container {
         padding: 15px;
       }
       
       .search-input {
         padding: 10px 40px 10px 12px;
+      }
+      
+      .project-number {
+        font-size: 1.5rem;
+      }
+      
+      .project-name {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Desktop: 3 cartes par ligne */
+    @media screen and (min-width: 1200px) {
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media screen and (min-width: 900px) and (max-width: 1199px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -313,6 +586,16 @@
     
     <h2>Liste des exercices avec Aperçu</h2>
     
+    <!-- Lien GitHub -->
+    <div class="github-link">
+      <a href="https://github.com/kevinkenfack/50projects50days" target="_blank" class="github-btn">
+        <svg class="github-icon" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        Code Source GitHub
+      </a>
+    </div>
+    
     <!-- Barre de recherche -->
     <div class="search-container">
       <input 
@@ -330,20 +613,35 @@
     
     <div class="results-info" id="resultsInfo"></div>
     
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nom du projet</th>
-          <th>Démo en direct</th>
-        </tr>
-      </thead>
-      <tbody id="projectsTable"></tbody>
-    </table>
+    <!-- Grille de cartes -->
+    <div class="projects-grid" id="projectsGrid"></div>
     
     <div class="no-results" id="noResults">
       <h3>🔍 Aucun exercice trouvé</h3>
       <p>Essayez avec d'autres mots-clés ou un autre numéro !</p>
+    </div>
+  </div>
+
+  <!-- Modal Dialog -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="danger-dialog">
+      <div class="dialog-header">
+        <h3 class="dialog-title">
+          <span class="danger-icon">🚫</span>
+          Accès Restreint
+        </h3>
+        <button class="close-btn" onclick="closeModal()">×</button>
+      </div>
+      <div class="dialog-body">
+        <div class="danger-message">
+          <strong>⚠️ Accès non autorisé !</strong><br><br>
+          tu n'est pas autorisé à voir le code source pour le moment.
+          Attend mes instructions avant de tenter d'y accéder.
+        </div>
+      </div>
+      <div class="dialog-actions">
+        <button class="btn-close" onclick="closeModal()">Compris</button>
+      </div>
     </div>
   </div>
 
@@ -402,62 +700,73 @@
       { fr: "Minuteur Simple", en: "Simple Timer" }
     ];
 
-    const table = document.getElementById("projectsTable");
+    const grid = document.getElementById("projectsGrid");
     const searchInput = document.getElementById("searchInput");
     const resultsInfo = document.getElementById("resultsInfo");
     const noResults = document.getElementById("noResults");
+    const modalOverlay = document.getElementById("modalOverlay");
 
-    // Générer le tableau initial
-    function generateTable() {
-      table.innerHTML = '';
+    // Générer la grille de cartes
+    function generateGrid() {
+      grid.innerHTML = '';
       projects.forEach((proj, index) => {
         const projectNumber = index + 1;
         const folderName = proj.en.toLowerCase().replace(/\s+/g, '-');
-        const tr = document.createElement("tr");
-        tr.className = 'project-row';
-        tr.setAttribute('data-number', projectNumber);
-        tr.setAttribute('data-name', proj.fr.toLowerCase());
+        const card = document.createElement("div");
+        card.className = 'project-card';
+        card.setAttribute('data-number', projectNumber);
+        card.setAttribute('data-name', proj.fr.toLowerCase());
         
-        tr.innerHTML = `
-          <td class="project-number">${String(projectNumber).padStart(2, '0')}</td>
-          <td class="project-name">${proj.fr}</td>
-          <td><a href="./${folderName}/index.html" target="_blank">la démo</a></td>
+        card.innerHTML = `
+          <span class="project-number">${String(projectNumber).padStart(2, '0')}</span>
+          <div class="project-name">${proj.fr}</div>
+          <div class="project-actions">
+            <a href="./${folderName}/index.html" target="_blank" class="demo-link">
+              🚀 Voir la démo
+            </a>
+            <div class="github-source-link" onclick="showGitHubWarning()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              Code source
+            </div>
+          </div>
         `;
-        table.appendChild(tr);
+        grid.appendChild(card);
       });
       updateResultsInfo(projects.length);
     }
 
-    // Fonction de recherche avancée (nom ET numéro)
+    // Fonction de recherche
     function filterProjects() {
       const searchTerm = searchInput.value.toLowerCase().trim();
-      const rows = table.getElementsByClassName('project-row');
+      const cards = grid.getElementsByClassName('project-card');
       let visibleCount = 0;
 
-      Array.from(rows).forEach(row => {
-        const projectNumber = row.getAttribute('data-number');
-        const projectName = row.getAttribute('data-name');
+      Array.from(cards).forEach(card => {
+        const projectNumber = card.getAttribute('data-number');
+        const projectName = card.getAttribute('data-name');
         
         // Recherche par numéro exact ou par nom (contient)
         const matchesNumber = projectNumber === searchTerm;
         const matchesName = projectName.includes(searchTerm);
         
         if (matchesNumber || matchesName || searchTerm === '') {
-          row.classList.remove('hidden');
+          card.classList.remove('hidden');
           visibleCount++;
         } else {
-          row.classList.add('hidden');
+          card.classList.add('hidden');
         }
       });
 
       // Afficher/masquer le message "aucun résultat"
       if (visibleCount === 0 && searchTerm !== '') {
         noResults.style.display = 'block';
-        table.style.display = 'none';
+        grid.style.display = 'none';
         resultsInfo.style.display = 'none';
       } else {
         noResults.style.display = 'none';
-        table.style.display = 'table';
+        grid.style.display = 'grid';
         resultsInfo.style.display = 'block';
       }
 
@@ -473,11 +782,36 @@
       }
     }
 
+    // Fonctions pour la modal
+    function showGitHubWarning() {
+      modalOverlay.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Empêche le scroll
+    }
+
+    function closeModal() {
+      modalOverlay.classList.remove('show');
+      document.body.style.overflow = 'auto'; // Réactive le scroll
+    }
+
+    // Fermer la modal en cliquant sur l'overlay
+    modalOverlay.addEventListener('click', function(e) {
+      if (e.target === modalOverlay) {
+        closeModal();
+      }
+    });
+
+    // Fermer la modal avec la touche Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalOverlay.classList.contains('show')) {
+        closeModal();
+      }
+    });
+
     // Événement de recherche en temps réel
     searchInput.addEventListener('input', filterProjects);
 
-    // Générer le tableau au chargement
-    generateTable();
+    // Générer la grille au chargement
+    generateGrid();
   </script>
 </body>
 </html>

@@ -421,5 +421,5 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
 ---
 
-**Date de livraison estimée** : À définir selon les ressources disponibles  
-**Maintenance** : Support technique post-livraison à prévoir
+**Date de livraison estimée** : 1 semaine
+**Maintenance** : réguliere

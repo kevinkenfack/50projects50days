@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHINT - Offre Exclusive Revendeurs & Entreprises</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1d7ce5 0%, #155da8 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+        
+        .logo {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 30px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .hero .tagline {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.95;
+        }
+        
+        /* Main Content */
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        
+        .content-left {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .content-right {
+            padding: 50px 40px;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #1d7ce5;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        
+        .problem-section {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        .problem-section h3 {
+            color: #856404;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .problem-section p {
+            color: #856404;
+            font-size: 16px;
+        }
+        
+        .solution-section {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        .solution-section h3 {
+            color: #155724;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .solution-section p {
+            color: #155724;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .benefits-list {
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-icon {
+            font-size: 28px;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .benefit-text {
+            flex: 1;
+        }
+        
+        .benefit-text h4 {
+            color: #1d7ce5;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .benefit-text p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        /* Product Image */
+        .product-showcase {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .product-showcase img {
+            width: 100%;
+            max-width: 500px;
+            border: 4px solid #1d7ce5;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(29, 124, 229, 0.3);
+        }
+        
+        /* Form Section */
+        .form-container {
+            background: linear-gradient(135deg, #1d7ce5 0%, #155da8 100%);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+        
+        .form-container h3 {
+            color: white;
+            font-size: 26px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .form-subtitle {
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .form-group .required {
+            color: #ffc107;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            font-size: 15px;
+            background: white;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #ffc107;
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: #ffc107;
+            color: #1d7ce5;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        }
+        
+        .btn-submit:hover {
+            background: #ffca2c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .badge {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+        }
+        
+        .badge-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        .badge-text {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        /* Video Section */
+        .video-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .video-section h3 {
+            color: #1d7ce5;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .video-btn {
+            display: inline-block;
+            background: #FF0000;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        .video-btn:hover {
+            background: #cc0000;
+        }
+        
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn-primary {
+            background: #1d7ce5;
+            color: white;
+            border: 2px solid #1d7ce5;
+        }
+        
+        .cta-btn-primary:hover {
+            background: #155da8;
+            border-color: #155da8;
+        }
+        
+        .cta-btn-whatsapp {
+            background: #25D366;
+            color: white;
+            border: 2px solid #25D366;
+        }
+        
+        .cta-btn-whatsapp:hover {
+            background: #1da851;
+            border-color: #1da851;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer h4 {
+            color: #1d7ce5;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 15px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: #1d7ce5;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero .subtitle {
+                font-size: 20px;
+            }
+            
+            .content-left,
+            .content-right {
+                padding: 30px 20px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <img src="https://i.imgur.com/S03RJCr.jpeg" alt="CHINT Logo" class="logo">
+            <h1>Stop au Blabla Électrique ⚡<br>CHINT Déménage les Prix, Pas la Qualité !</h1>
+            <p class="subtitle">Offre Exclusive pour Revendeurs & Entreprises</p>
+            <p class="tagline">
+                La qualité mondiale + des prix qui font sourire votre comptable = CHINT, le partenaire électrique intelligent pour l'Afrique francophone
+            </p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-grid">
+                <!-- Left Content -->
+                <div class="content-left">
+                    <h2 class="section-title">Le Dilemme que TOUS les Professionnels Connaissent...</h2>
+                    
+                    <div class="problem-section">
+                        <h3>🤯 Le Problème</h3>
+                        <p>
+                            Prix correct = Fiabilité douteuse<br>
+                            OU<br>
+                            Qualité irréprochable = Trésorerie vidée
+                        </p>
+                    </div>
+                    
+                    <div class="solution-section">
+                        <h3>✅ La Solution CHINT</h3>
+                        <p>
+                            <strong>On a dit STOP à ce dilemme ridicule !</strong><br><br>
+                            Pourquoi payer la différence quand on peut avoir l'excellence sans l'extravagance ? Nos équipements électriques sont le secret le moins bien gardé de l'industrie.
+                        </p>
+                    </div>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⚡</div>
+                            <div class="benefit-text">
+                                <h4>Qualité Mondiale</h4>
+                                <p>Reconnue internationalement, testée et approuvée</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💰</div>
+                            <div class="benefit-text">
+                                <h4>Prix Compétitifs</h4>
+                                <p>Des marges confortables pour vos projets et reventes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🔧</div>
+                            <div class="benefit-text">
+                                <h4>Fiabilité Garantie</h4>
+                                <p>Des produits qui font le job et durent longtemps</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📦</div>
+                            <div class="benefit-text">
+                                <h4>Gamme Complète</h4>
+                                <p>Disjoncteurs, automatisation, et bien plus encore</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-showcase">
+                        <img src="https://i.imgur.com/J3NNfQ8.jpeg" alt="Produits CHINT">
+                    </div>
+                    
+                    <div class="video-section">
+                        <h3>🎥 Découvrez CHINT en Action</h3>
+                        <p style="margin-bottom: 20px; color: #666;">Voyez par vous-même la qualité qui fait la différence</p>
+                        <a href="https://youtu.be/0PUZQbSV1Xo?si=f-43m8q5AaAnVex5" class="video-btn" target="_blank">Voir la Vidéo</a>
+                    </div>
+                </div>
+                
+                <!-- Right Content - Form -->
+                <div class="content-right">
+                    <div class="form-container">
+                        <h3>🎁 Obtenez Votre Offre Exclusive</h3>
+                        <p class="form-subtitle">
+                            Remplissez ce formulaire et recevez nos tarifs professionnels + un bonus exclusif pour nos nouveaux partenaires
+                        </p>
+                        
+                        <form class="list-subscribe-form" action="https://email-marketing.falamoi.com/index.php/lists/yl5088lp5t97d/subscribe" method="post">
+                            <div class="form-group">
+                                <label for="EMAIL">Email Professionnel <span class="required">*</span></label>
+                                <input class="form-control" placeholder="votre@email.com" type="email" name="EMAIL" id="EMAIL" required />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="FNAME">Prénom</label>
+                                <input class="form-control" placeholder="Votre prénom" type="text" name="FNAME" id="FNAME" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="LNAME">Nom</label>
+                                <input class="form-control" placeholder="Votre nom" type="text" name="LNAME" id="LNAME" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="OWNER">Entreprise / Nom Commercial</label>
+                                <input class="form-control" placeholder="Nom de votre entreprise" type="text" name="OWNER" id="OWNER" />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="URLMAILBOX">Site Web / Contact</label>
+                                <input class="form-control" placeholder="www.votresite.com ou contact" type="text" name="URLMAILBOX" id="URLMAILBOX" />
+                            </div>
+                            
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                <input type="text" name="357273aa8d20d3d3cdab1a813f3dd71b43bc6905" tabindex="-1" autocomplete="off" value="" />
+                            </div>
+                            
+                            <button type="submit" class="btn-submit">
+                                Recevoir Mon Offre Maintenant 🚀
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <div class="badge-icon">🌍</div>
+                            <div class="badge-text">Présent en Afrique Francophone</div>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon">✓</div>
+                            <div class="badge-text">Qualité Certifiée</div>
+                        </div>
+                        <div class="badge">
+                            <div class="badge-icon">🤝</div>
+                            <div class="badge-text">Support Dédié</div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <h3 style="color: #1d7ce5; font-size: 22px; margin-bottom: 20px;">Besoin d'une réponse immédiate ?</h3>
+                        <div class="cta-buttons">
+                            <a href="tel:+237672709469" class="cta-btn cta-btn-primary">📞 Appeler Direct</a>
+                            <a href="https://wa.me/237672709469?text=Bonjour,%20je%20viens%20de%20votre%20landing%20page%20CHINT.%20J'aimerais%20en%20savoir%20plus%20sur%20vos%20équipements%20électriques%20et%20obtenir%20une%20offre%20personnalisée." class="cta-btn cta-btn-whatsapp">💬 WhatsApp</a>
+                        </div>
+                        <p style="margin-top: 15px; font-size: 15px; color: #666;">
+                            Ou rejoignez notre <a href="https://chat.whatsapp.com/CwIe9414Z3y2JDl6wbe355" style="color: #25D366; font-weight: bold;">Groupe WhatsApp</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Final CTA -->
+        <div style="text-align: center; margin: 50px 0; padding: 40px 20px; background: white; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1);">
+            <h2 style="color: #1d7ce5; font-size: 32px; margin-bottom: 20px;">
+                CHINT : La Qualité qui ne fait pas de choc... sauf sur les prix ! 💥
+            </h2>
+            <p style="font-size: 20px; color: #333; margin-bottom: 30px;">
+                À tous nos futurs clients, partenaires et distributeurs du Sénégal, de la Côte d'Ivoire, du Cameroun, de la RDC et de partout ailleurs en Afrique francophone :
+            </p>
+            <p style="font-size: 24px; font-weight: bold; color: #1d7ce5;">
+                L'heure n'est plus à l'hésitation. Passez à l'action. ⚡
+            </p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <h4>CHINT - Solutions Électriques d'Excellence</h4>
+            <div class="contact-info">
+                <p>📞 <a href="tel:+237672709469">+237 6 72 70 94 69</a></p>
+                <p>💬 <a href="https://wa.me/237672709469">WhatsApp: +237 6 72 70 94 69</a></p>
+                <p>✉️ <a href="mailto:ambatinda@gmail.com">ambatinda@gmail.com</a></p>
+                <p style="margin-top: 20px;">🌍 Au service de l'Afrique francophone</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CHINT. Tous droits réservés.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculatrice Élégante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="calculator" aria-label="Calculatrice">
+        <header class="display-panel">
+          <p class="history" id="history" aria-live="polite"></p>
+          <p class="display" id="display" aria-live="polite">0</p>
+        </header>
+
+        <div class="keys" role="group" aria-label="Touches de calculatrice">
+          <button class="key key--soft" data-action="clear">AC</button>
+          <button class="key key--soft" data-action="delete">⌫</button>
+          <button class="key key--soft" data-action="percent">%</button>
+          <button class="key key--accent" data-action="operator" data-value="/">÷</button>
+
+          <button class="key" data-action="number" data-value="7">7</button>
+          <button class="key" data-action="number" data-value="8">8</button>
+          <button class="key" data-action="number" data-value="9">9</button>
+          <button class="key key--accent" data-action="operator" data-value="*">×</button>
+
+          <button class="key" data-action="number" data-value="4">4</button>
+          <button class="key" data-action="number" data-value="5">5</button>
+          <button class="key" data-action="number" data-value="6">6</button>
+          <button class="key key--accent" data-action="operator" data-value="-">−</button>
+
+          <button class="key" data-action="number" data-value="1">1</button>
+          <button class="key" data-action="number" data-value="2">2</button>
+          <button class="key" data-action="number" data-value="3">3</button>
+          <button class="key key--accent" data-action="operator" data-value="+">+</button>
+
+          <button class="key key--wide" data-action="number" data-value="0">0</button>
+          <button class="key" data-action="decimal">,</button>
+          <button class="key key--accent key--equals" data-action="equals">=</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

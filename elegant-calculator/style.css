@@ -1,0 +1,117 @@
+:root {
+  color-scheme: dark;
+  --bg: radial-gradient(circle at top, #252542, #0f1020 60%);
+  --panel: rgba(18, 20, 40, 0.75);
+  --key: rgba(255, 255, 255, 0.06);
+  --key-hover: rgba(255, 255, 255, 0.14);
+  --accent: linear-gradient(145deg, #7d6bff, #5fd3ff);
+  --text-primary: #f3f5ff;
+  --text-muted: #9ea4c5;
+  --shadow: 0 25px 60px rgba(7, 10, 35, 0.55);
+  --radius: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-primary);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.app-shell {
+  width: min(100%, 380px);
+}
+
+.calculator {
+  backdrop-filter: blur(16px);
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.display-panel {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: calc(var(--radius) - 10px);
+  padding: 16px;
+  margin-bottom: 16px;
+  min-height: 92px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.history {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  min-height: 1.2em;
+  text-align: right;
+}
+
+.display {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: right;
+  word-break: break-all;
+}
+
+.keys {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.key {
+  border: none;
+  color: var(--text-primary);
+  background: var(--key);
+  font: inherit;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 16px;
+  min-height: 58px;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.2s ease;
+}
+
+.key:hover {
+  background: var(--key-hover);
+}
+
+.key:active {
+  transform: scale(0.96);
+}
+
+.key--soft {
+  color: #c6ccf0;
+}
+
+.key--accent {
+  background: var(--accent);
+  color: #0a1024;
+}
+
+.key--accent:hover {
+  filter: brightness(1.08);
+}
+
+.key--wide {
+  grid-column: span 2;
+}
+
+.key--equals {
+  box-shadow: 0 12px 20px rgba(95, 211, 255, 0.35);
+}

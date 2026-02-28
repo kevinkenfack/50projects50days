@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Générateur de Dégradé</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>🎨 Générateur de Dégradé</h1>
+      <p>Crée un fond élégant en un clic.</p>
+
+      <div class="controls">
+        <label>Couleur 1 <input type="color" id="colorA" value="#6a11cb" /></label>
+        <label>Couleur 2 <input type="color" id="colorB" value="#2575fc" /></label>
+        <label>Angle <input type="range" id="angle" min="0" max="360" value="135" /></label>
+      </div>
+
+      <pre id="cssCode"></pre>
+      <button id="copyBtn">Copier le CSS</button>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

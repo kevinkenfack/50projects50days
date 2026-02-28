@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partage de Dépenses</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="box">
+      <h1>💸 Partage de Dépenses</h1>
+      <p>Calcule rapidement combien chacun doit payer.</p>
+
+      <label>Montant total (€)
+        <input id="amount" type="number" min="0" step="0.01" placeholder="Ex: 89.50" />
+      </label>
+
+      <label>Nombre de personnes
+        <input id="people" type="number" min="1" step="1" value="2" />
+      </label>
+
+      <label>Pourboire (%)
+        <input id="tip" type="range" min="0" max="30" value="10" />
+        <span id="tipValue">10%</span>
+      </label>
+
+      <button id="calcBtn">Calculer</button>
+      <p class="result" id="result">Chaque personne: 0,00 €</p>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

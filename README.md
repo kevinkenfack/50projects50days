@@ -58,6 +58,9 @@ This is the main repository for all of the projects in the course.
 | 49  | [Todo List](https://github.com/bradtraversy/50projects50days/tree/master/todo-list)                                         | [Live Demo](https://50projects50days.com/projects/todo-list/)                     |
 | 50  | [Insect Catch Game](https://github.com/bradtraversy/50projects50days/tree/master/insect-catch-game)                         | [Live Demo](https://50projects50days.com/projects/insect-catch-game/)             |
 | 51  | [Simple Timer](https://github.com/bradtraversy/50projects50days/tree/master/simple-timer)                                   | [Live Demo](https://50projects50days.com/projects/simple-timer/)             |
+| 52  | [Elegant Calculator](https://github.com/bradtraversy/50projects50days/tree/master/elegant-calculator)                       | [Live Demo](./elegant-calculator/index.html)                                     |
+| 53  | [Gradient Generator](https://github.com/bradtraversy/50projects50days/tree/master/gradient-generator)                     | [Live Demo](./gradient-generator/index.html)                                     |
+| 54  | [Expense Splitter](https://github.com/bradtraversy/50projects50days/tree/master/expense-splitter)                         | [Live Demo](./expense-splitter/index.html)                                       |
 
 **NOTE ON PULL REQUESTS**: All of these projects are part of the course. While I do appreciate people trying to make some things prettier or adding new features, we are only accepting pull requests and looking at issues for bug fixes so that the code stays inline with the course
 
